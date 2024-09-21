@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
-import Button from "@/components/button";
+import { ButtonSharedState } from "@/components/button-shared-state";
+import { ButtonIndependentState } from "@/components/button-independent-state";
 
 
 export default function Home() {
@@ -11,9 +12,13 @@ export default function Home() {
   }
   return (
       <main className="flex min-h-screen flex-col items-center p-24 gap-4">
-        <h1>React Counter Button</h1>
-        <Button count={count} onClick={handleClick}/>
-        <Button count={count} onClick={handleClick}/>
+        <h1 className="text-3xl font-bold">React Counter Buttons</h1>
+        <h2 className="text-xl">Buttons with shared state</h2>
+        <ButtonSharedState count={count} onClick={handleClick}/>
+        <ButtonSharedState count={count} onClick={handleClick}/>
+        <h2 className="text-xl">Buttons with independent state</h2>
+        <ButtonIndependentState />
+        <ButtonIndependentState />
       </main>
   );
 }
